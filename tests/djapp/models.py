@@ -106,5 +106,12 @@ class AbstractWithCustomManager(models.Model):
         abstract = True
 
 
-class FromAbstractWithCustomManager(AbstractWithCustomManager):
+class InheritingAbstractWithCustomManager(AbstractWithCustomManager):
+    bar = models.EmailField()
+
+    class Meta:
+        abstract = True
+
+
+class FromAbstractWithCustomManager(InheritingAbstractWithCustomManager):
     pass
