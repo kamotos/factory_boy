@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright: See the LICENSE file.
-
-
+import random
 import unittest
 
 import faker.providers
@@ -12,6 +11,7 @@ import factory
 class MockFaker(object):
     def __init__(self, expected):
         self.expected = expected
+        self.random = random.Random()
 
     def format(self, provider, **kwargs):
         return self.expected[provider]
